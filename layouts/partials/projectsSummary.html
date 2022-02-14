@@ -1,5 +1,5 @@
 
-<h3 class="mb-3"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+<h3 class="mb-3"><!-- <a href="{{ .Permalink }}"> -->{{ .Title }}<!--</a>--></h3>
 <div class="resume-item d-flex flex-column flex-md-row mb-3">
 
   <div class="resume-content" style="width:200px;">
@@ -7,9 +7,9 @@
       <img src="{{ . }}" style="max-height:150px;max-width:150px;"/>
     {{ end }}
   </div>
-  <div class="resume-date">
+  <div class="resume-date ml-3 mt-1">
     <p>{{ .Description | safeHTML }}<p>
-    <p class><a href="{{.Permalink}}">Read more..</a></p>
+    <!-- <p class><a href="{{.Permalink}}">Read more..</a></p> -->
   </div>
 </div>
 <div>{{ partial "techtags" . }}</div>

@@ -8,7 +8,16 @@
                 {{ if isset . "name" }}
                     {{ $devicon := cond (in $.Site.Data.devicons (lower .icon)) (lower .icon) (cond (in $.Site.Data.devicons (lower .name)) (lower .name) "terminal_badge") }}
                     <li class="list-inline-item">
-                      <i class="devicons devicons-{{ $devicon }}"></i>
+                      {{ if isset . "icon_path" }}
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/{{.icon_path}}.svg" class="my-dev-icon"/>
+                      {{ end }}
+                      {{ if isset . "iconify_1" }}
+                        {{ if isset . "color" }}
+                          <span class="iconify my-dev-icon" data-icon="{{.iconify_1}}:{{.iconify_2}}" color="{{.color}}"></span>
+                        {{ else }}
+                          <span class="iconify my-dev-icon" data-icon="{{.iconify_1}}:{{.iconify_2}}"></span>
+                        {{ end }}
+                      {{ end }}
                       {{if isset . "link"}}
                           <a href="{{.link}}">{{ .name }}</a>
                       {{ else }}
