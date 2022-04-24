@@ -20,7 +20,7 @@
 
         </div>
         <div>
-          {{ .Content }}
+          {{ .Description | safeHTML }}
           <!-- <h3>Certifications</h3>
           <ul class="list-inline list-social-icons mb-0">
             {{ range .Site.Data.certifications }}
